@@ -75,6 +75,24 @@
       scrollWheelZoom: false,
       tap: false
     }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
+    
+    function onLocationFound(e) {
+		const radius = e.accuracy / 2;
+
+		const locationMarker = L.marker(e.latlng).addTo(map)
+			.bindPopup(`You are within ${radius} meters from this point`).openPopup();
+
+		const locationCircle = L.circle(e.latlng, radius).addTo(map);
+	}
+
+	function onLocationError(e) {
+		alert(e.message);
+	}
+
+	map.on('locationfound', onLocationFound);
+	map.on('locationerror', onLocationError);
+  
+    map.locate({setView: true, maxZoom: 16});
   </script>
 
   <script type="text/javascript" src="./google-doc-url.js"></script>
