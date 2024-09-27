@@ -74,7 +74,7 @@
       zoomControl: false,
       scrollWheelZoom: false,
       tap: false
-    }).setView([41.76,-72.69], 33); // default center is overridden by Google Sheet options and points
+    }).setView([41.76,-72.69]); // default center is overridden by Google Sheet options and points
     
     function onLocationFound(e) {
 		const radius = e.accuracy / 2;
@@ -92,7 +92,7 @@
 	map.on('locationfound', onLocationFound);
 	map.on('locationerror', onLocationError);
   
-    map.locate({setView: true, maxZoom: 16});
+    map.locate({setView: true, maxZoom: 64});
 	  const imageUrl = 'https://maps.lib.utexas.edu/maps/historical/newark_nj_1922.jpg';
 	const errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
 	const altText = 'Image of Newark, N.J. in 1922. Source: The University of Texas at Austin, UT Libraries Map Collection.';
