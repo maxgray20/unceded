@@ -289,3 +289,9 @@ span.legend-icon {
 .ladder form, .ladder div {
   display: block;
 }
+
+@media screen and (max-width: 985px){
+.leaflet-popup-content {
+    min-width: 120px !important;
+}
+}
