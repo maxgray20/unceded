@@ -77,12 +77,17 @@
     }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
     
     function onLocationFound(e) {
-		const radius = e.accuracy / 2;
+		const maxDistance = 10000
+	    	const radius = e.accuracy / 2;
+	    	const userLatLng = e.latlng;
+	    	const distance = map.distance(userLatLng, targetLatLng);
 
-		const locationMarker = L.marker(e.latlng).addTo(map)
+		if (distance <= maxDistance) {
+	    	const locationMarker = L.marker(e.latlng).addTo(map)
 			.bindPopup(`You are within ${radius} meters from this point`).openPopup();
 
 		const locationCircle = L.circle(e.latlng, radius).addTo(map);
+		}
 	}
 
 	function onLocationError(e) {
