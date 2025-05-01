@@ -88,9 +88,6 @@
 			.bindPopup(`You are within ${radius} meters from this point`).openPopup();
 
 		const locationCircle = L.circle(e.latlng, radius).addTo(map);
-		} else {
-        	console.log(`Too far: ${distance.toFixed(2)} meters - ignoring location`);
-        	alert("You are too far from the target location.");
 		}
 	}
 
