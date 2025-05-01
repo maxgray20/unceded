@@ -78,6 +78,7 @@
     
     function onLocationFound(e) {
 		const maxDistance = 10000
+	    	const targetLatlng = (41.76,-72.69)
 	    	const radius = e.accuracy / 2;
 	    	const userLatLng = e.latlng;
 	    	const distance = map.distance(userLatLng, targetLatLng);
@@ -87,6 +88,9 @@
 			.bindPopup(`You are within ${radius} meters from this point`).openPopup();
 
 		const locationCircle = L.circle(e.latlng, radius).addTo(map);
+		} else {
+        	console.log(`Too far: ${distance.toFixed(2)} meters - ignoring location`);
+        	alert("You are too far from the target location.");
 		}
 	}
 
