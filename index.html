@@ -78,9 +78,9 @@
     
     function onLocationFound(e) {
 		const maxDistance = 10000
-	    	const targetLatLng = (41.76,-72.69)
 	    	const radius = e.accuracy / 2;
 	    	const userLatLng = e.latlng;
+	    	const targetLatLng = L.latLng(41.76,-72.69)
 	    	const distance = map.distance(userLatLng, targetLatLng);
 
 		if (distance <= maxDistance) {
