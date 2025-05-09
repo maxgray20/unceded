@@ -77,7 +77,7 @@
     }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
 	
 	const targetLatLng   = L.latLng(43.032525180339206, -87.91620642995298);
-  	const maxDistance    = 50_000; // in meters
+  	const maxDistance    = 50000; // in meters
 
 	map.locate({
     	watch:      false,      // just once
@@ -87,12 +87,10 @@
   	});
     
     function onLocationFound(e) {
-		const maxDistance = 50000
 	    	const userLatLng = e.latlng;
 	    	const accuracy   = e.accuracy;
 	    	const radius = e.accuracy / 2;
 	    	const userLatLng = e.latlng;
-	    	const targetLatLng = L.latLng(43.032525180339206, -87.91620642995298)
 	    	const distance = map.distance(userLatLng, targetLatLng);
 
 		if (distance <= maxDistance) {
