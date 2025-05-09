@@ -88,9 +88,9 @@
 			.bindPopup(`You are within ${radius} meters from this point`).openPopup();
 
 		const locationCircle = L.circle(e.latlng, radius).addTo(map);
-		} else {function onLocationError(e) {
-		alert(e.message);
-		}}
+		} else {
+    		console.log("Geolocation not supported, using default center");
+  		}
 	}
 
 	function onLocationError(e) {
