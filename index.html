@@ -76,21 +76,20 @@
       tap: false
     }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
 	
-	const targetLatLng   = L.latLng(43.032525180339206, -87.91620642995298);
-  	const maxDistance    = 50000; // in meters
+    const targetLatLng   = L.latLng(43.032525180339206, -87.91620642995298);
+    const maxDistance    = 50000;
 
-	map.locate({
-    	watch:      false,      // just once
-    	setView:    false,      // <-- disable auto-recenter
-    	maxZoom:    16,
-    	enableHighAccuracy: true
-  	});
+    map.locate({
+    watch:      false,
+    setView:    false,
+    maxZoom:    16,
+    enableHighAccuracy: true
+    });
     
     function onLocationFound(e) {
 	    	const userLatLng = e.latlng;
 	    	const accuracy   = e.accuracy;
 	    	const radius = e.accuracy / 2;
-	    	const userLatLng = e.latlng;
 	    	const distance = map.distance(userLatLng, targetLatLng);
 
 		if (distance <= maxDistance) {
@@ -99,10 +98,6 @@
 
 		const locationCircle = L.circle(e.latlng, radius).addTo(map);
 		}
-	    	else {
-        	// optional: let the user know they're out of range
-        	alert("You're more than 50 km away from the reference point. Showing default view.");
-    		}
 	}
 
 	function onLocationError(e) {
