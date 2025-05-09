@@ -88,9 +88,11 @@
 			.bindPopup(`You are within ${radius} meters from this point`).openPopup();
 
 		const locationCircle = L.circle(e.latlng, radius).addTo(map);
-		} else {
-    		console.log("Geolocation not supported, using default center");
-  		}
+		}
+	    	else {
+        	// optional: let the user know they're out of range
+        	alert("You're more than 50 km away from the reference point. Showing default view.");
+    		}
 	}
 
 	function onLocationError(e) {
