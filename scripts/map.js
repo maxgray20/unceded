@@ -942,10 +942,10 @@ $(window).on('load', function() {
       maxZoom: 18,
 
       // Pass the api key to most commonly used parameters
-      apiKey: trySetting('_tileProviderApiKey', ''),
-      apikey: trySetting('_tileProviderApiKey', ''),
-      key: trySetting('_tileProviderApiKey', ''),
-      accessToken: trySetting('_tileProviderApiKey', '')
+      apiKey: trySetting('_tileProviderApiKey', 'cb1_4kp4_1_1f6cfa3d521467f3f0769c8b'),
+      apikey: trySetting('_tileProviderApiKey', 'cb1_4kp4_1_1f6cfa3d521467f3f0769c8b'),
+      key: trySetting('_tileProviderApiKey', 'cb1_4kp4_1_1f6cfa3d521467f3f0769c8b'),
+      accessToken: trySetting('_tileProviderApiKey', 'cb1_4kp4_1_1f6cfa3d521467f3f0769c8b')
     }).addTo(map);
 
     L.control.attribution({
